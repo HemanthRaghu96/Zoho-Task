@@ -3,6 +3,7 @@ import { HiMiniXMark } from "react-icons/hi2";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { API } from "../../api/api";
 import axios from "axios";
+import Topbar from "../global/Topbat";
 
 const EditItem = () => {
     const { itemId } = useParams();
@@ -15,7 +16,8 @@ const EditItem = () => {
     const response = await axios.get(`${API}getselecteditems/${itemId}`);
     setData(response.data.selectedItems[0]);
   };
-  return data ? <EditItems data={data} itemId={itemId} /> : "Loading...";
+  return
+   data ? <EditItems data={data} itemId={itemId} /> : "Loading...";
 }
 
 export default EditItem
@@ -39,7 +41,9 @@ function EditItems({ data, itemId }) {
     await navigate(`/items/${itemId}`);
   };
   return (
-   
+    <>
+       <Topbar />
+      
     <section className={open?"ml-16 mt-16  h-full overflow-y-auto":"ml-14 mt-16 md:ml-56 h-full overflow-y-auto"}>
       <div className="flex justify-between mr-5 md:mr-10 lg:mr-20">
         <h1 className="font-semibold text-xl">{name} </h1>
@@ -117,5 +121,6 @@ function EditItems({ data, itemId }) {
       </div>
      
     </section>
+    </>
   );
 }

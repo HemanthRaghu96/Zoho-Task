@@ -6,6 +6,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { API } from "../../api/api";
+import Topbar from "../global/Topbat";
 
 
 const ViewSingleItem = () => {
@@ -23,6 +24,8 @@ const ViewSingleItem = () => {
     await axios.delete(`${API}deleteitems/${itemId}`);
   };
   return (
+    <>
+       <Topbar />
     <section className={open?"ml-16 mt-16  h-screen":"ml-14 mt-16 md:ml-56 h-screen"}>
       <div className="flex justify-between mr-5 md:mr-10 lg:mr-20">
         <h1 className="font-semibold text-xl">User Details</h1>
@@ -75,6 +78,7 @@ const ViewSingleItem = () => {
       
  
     </section>
+    </>
   )
 }
 

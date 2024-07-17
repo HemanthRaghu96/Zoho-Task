@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { API } from "../../api/api";
 import ItemsCard from "../../component/ItemCard";
+import Topbar from "../global/Topbat";
 
 
 
@@ -29,7 +30,11 @@ const Dashboard = () => {
     }
   };
   return (
+    <>
+       <Topbar />
+   
     <section className={open?"ml-16 mt-16  h-full":"ml-14 mt-16 md:ml-56 h-full"}>
+    
       <div className="flex justify-between mr-5 md:mr-10 ld:mr-32">
         <h1 className="font-semibold text-xl">All Users</h1>
         <Link to={"/items/additems"}>
@@ -82,6 +87,7 @@ const Dashboard = () => {
       
     
     </section>
+    </>
   )
 }
 

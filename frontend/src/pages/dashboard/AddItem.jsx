@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HiMiniXMark } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
 import { API } from "../../api/api";
+import Topbar from "../global/Topbat";
 
 export default function AddItem() {
   const navigate = useNavigate();
@@ -32,6 +33,8 @@ export default function AddItem() {
     }
   };
   return (
+    <>
+       <Topbar />
     <section
       className={
         open
@@ -116,5 +119,6 @@ export default function AddItem() {
         </button>
       </div>
     </section>
+    </>
   );
 }
