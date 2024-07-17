@@ -16,11 +16,11 @@ const EditItem = () => {
     const response = await axios.get(`${API}getselecteditems/${itemId}`);
     setData(response.data.selectedItems[0]);
   };
-  return
-   data ? <EditItems data={data} itemId={itemId} /> : "Loading...";
+  return data ? <EditItems data={data} itemId={itemId} /> : "Loading...";
 }
 
 export default EditItem
+
 function EditItems({ data, itemId }) {
   const navigate = useNavigate();
   const [name, setName] = useState(data.name ||"");
